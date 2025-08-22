@@ -1,0 +1,19 @@
+{% extends 'books/base.html' %}
+{% block title %}Home · Online Bookstore{% endblock %}
+{% block content %}
+<div class="p-5 mb-4 bg-light rounded-3">
+<div class="container-fluid py-5">
+<h1 class="display-5 fw-bold">Discover your next great read</h1>
+<p class="col-md-8 fs-5">Browse books by author or category, search by title, and share your thoughts with reviews.</p>
+<a class="btn btn-primary btn-lg" href="{% url 'book-list' %}">Browse Books</a>
+</div>
+</div>
+<form class="row gy-2" method="get" action="{% url 'book-list' %}">
+<div class="col-12 col-md-8">
+<input type="text" name="q" class="form-control" placeholder="Search books…">
+</div>
+<div class="col-12 col-md-4">
+<button class="btn btn-outline-primary w-100">Search</button>
+</div>
+</form>
+{% endblock %}

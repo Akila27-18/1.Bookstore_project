@@ -1,0 +1,25 @@
+{% extends 'books/base.html' %}
+{% block title %}Register · Online Bookstore{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+<div class="col-md-7 col-lg-6">
+<div class="card shadow-sm">
+<div class="card-body">
+<h4 class="mb-3">Create an account</h4>
+<form method="post">
+{% csrf_token %}
+{% for field in form %}
+<div class="mb-3">
+<label class="form-label">{{ field.label }}</label>
+{{ field }}
+{% if field.help_text %}<div class="form-text">{{ field.help_text|safe }}</div>{% endif %}
+{{ field.errors }}
+</div>
+{% endfor %}
+<button class="btn btn-primary w-100">Register</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

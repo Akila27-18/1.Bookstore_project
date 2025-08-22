@@ -1,0 +1,60 @@
+{% extends 'books/base.html' %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-4">
+    {% if object.cover_image %}
+      <img src="{{ object.cover_image.url }}" class="img-fluid rounded" alt="{{ object.title }}">
+    {% else %}
+      <svg class="bd-placeholder-img img-fluid rounded" width="100%" height="300"
+           xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder"
+           preserveAspectRatio="xMidYMid slice" focusable="false">
+        <title>No cover</title>
+        <rect width="100%" height="100%" fill="#e9ecef"></rect>
+      </svg>
+    {% endif %}
+  </div>
+
+  <div class="col-md-8">
+    <h2>{{ object.title }}</h2>
+    <p class="text-muted">by {{ object.author.name }}</p>
+    <p>{{ object.description }}</p>
+    <p class="fw-semibold">Price: ₹{{ object.price|floatformat:2 }}</p>
+
+    {% if avg_rating %}
+      <p>Average rating: <strong>{{ avg_rating|floatformat:1 }}/5</strong></p>
+    {% endif %}
+  </div>
+</div>
+
+<hr>
+<h4 class="mt-4">Reviews</h4>
+
+{% if user.is_authenticated and can_review %}
+  <a href="{% url 'review-add' object.id %}" class="btn btn-primary mb-3">Write a review</a>
+{% endif %}
+
+<div class="vstack gap-3">
+  {% for review in reviews %}
+    <div class="review p-3 border rounded">
+      <div class="d-flex justify-content-between align-items-center mb-1">
+        <div>
+          <strong>{{ review.user.username }}</strong> ·
+          <span class="text-muted">{{ review.created_at|date:"M d, Y" }}</span>
+        </div>
+        <div class="badge bg-secondary">{{ review.rating }}/5</div>
+      </div>
+      <p class="mb-1">{{ review.comment }}</p>
+
+      {% if review.user == user %}
+      <div class="d-flex gap-2">
+        <a href="{% url 'review-edit' review.id %}" class="btn btn-sm btn-outline-secondary">Edit</a>
+        <a href="{% url 'review-delete' review.id %}" class="btn btn-sm btn-outline-danger">Delete</a>
+      </div>
+      {% endif %}
+    </div>
+  {% empty %}
+    <p>No reviews yet.</p>
+  {% endfor %}
+</div>
+{% endblock %}

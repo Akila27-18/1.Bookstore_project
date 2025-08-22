@@ -1,0 +1,199 @@
+[
+  {
+    "model": "books.category",
+    "pk": 1,
+    "fields": {"name": "Classic", "slug": "classic"}
+  },
+  {
+    "model": "books.category",
+    "pk": 2,
+    "fields": {"name": "Dystopian", "slug": "dystopian"}
+  },
+  {
+    "model": "books.category",
+    "pk": 3,
+    "fields": {"name": "Romance", "slug": "romance"}
+  },
+  {
+    "model": "books.category",
+    "pk": 4,
+    "fields": {"name": "Fantasy", "slug": "fantasy"}
+  },
+  {
+    "model": "books.category",
+    "pk": 5,
+    "fields": {"name": "Adventure", "slug": "adventure"}
+  },
+  {
+    "model": "books.category",
+    "pk": 6,
+    "fields": {"name": "Satire", "slug": "satire"}
+  },
+  {
+    "model": "books.category",
+    "pk": 7,
+    "fields": {"name": "Historical", "slug": "historical"}
+  },
+  {
+    "model": "books.category",
+    "pk": 8,
+    "fields": {"name": "War", "slug": "war"}
+  },
+  {
+    "model": "books.category",
+    "pk": 9,
+    "fields": {"name": "Mystery", "slug": "mystery"}
+  },
+
+  { "model": "books.author", "pk": 1, "fields": {"name": "F. Scott Fitzgerald", "bio": "American novelist"} },
+  { "model": "books.author", "pk": 2, "fields": {"name": "George Orwell", "bio": "English novelist"} },
+  { "model": "books.author", "pk": 3, "fields": {"name": "Jane Austen", "bio": "English novelist"} },
+  { "model": "books.author", "pk": 4, "fields": {"name": "J.R.R. Tolkien", "bio": "English writer and philologist"} },
+  { "model": "books.author", "pk": 5, "fields": {"name": "Herman Melville", "bio": "American novelist"} },
+  { "model": "books.author", "pk": 6, "fields": {"name": "Mark Twain", "bio": "American writer and humorist"} },
+  { "model": "books.author", "pk": 7, "fields": {"name": "Leo Tolstoy", "bio": "Russian writer"} },
+  { "model": "books.author", "pk": 8, "fields": {"name": "Ernest Hemingway", "bio": "American novelist"} },
+  { "model": "books.author", "pk": 9, "fields": {"name": "J.K. Rowling", "bio": "British author"} },
+  { "model": "books.author", "pk": 10, "fields": {"name": "Agatha Christie", "bio": "British detective novelist"} },
+
+  {
+    "model": "books.book",
+    "pk": 1,
+    "fields": {
+      "title": "The Great Gatsby",
+      "author": 1,
+      "categories": [1],
+      "description": "A classic novel set in the Jazz Age.",
+      "price": "9.99",
+      "published_date": "1925-04-10",
+      "cover_image": "book_covers/placeholder.jpg",
+      "created_at": "2023-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 2,
+    "fields": {
+      "title": "1984",
+      "author": 2,
+      "categories": [2],
+      "description": "A dystopian novel about totalitarianism.",
+      "price": "8.99",
+      "published_date": "1949-06-08",
+      "cover_image": "book_covers/placeholder.jpg",
+      "created_at": "2023-01-02T10:00:00Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 3,
+    "fields": {
+      "title": "Pride and Prejudice",
+      "author": 3,
+      "categories": [3],
+      "description": "A romantic novel of manners.",
+      "price": "7.99",
+      "published_date": "1813-01-28",
+      "cover_image": "book_covers/placeholder.jpg",
+      "created_at": "2023-01-03T10:00:00Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 4,
+    "fields": {
+      "title": "The Hobbit",
+      "author": 4,
+      "categories": [4, 5],
+      "description": "A fantasy adventure preceding The Lord of the Rings.",
+      "price": "12.99",
+      "published_date": "1937-09-21",
+      "cover_image": "book_covers/placeholder.jpg",
+      "created_at": "2023-01-04T10:00:00Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 5,
+    "fields": {
+      "title": "Moby Dick",
+      "author": 5,
+      "categories": [5],
+      "description": "The saga of Captain Ahab’s quest for revenge against the white whale.",
+      "price": "11.50",
+      "published_date": "1851-10-18",
+      "cover_image": "book_covers/placeholder.jpg",
+      "created_at": "2023-01-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 6,
+    "fields": {
+      "title": "Adventures of Huckleberry Finn",
+      "author": 6,
+      "categories": [1, 5],
+      "description": "A satirical adventure novel set along the Mississippi River.",
+      "price": "10.00",
+      "published_date": "1884-12-10",
+      "cover_image": "book_covers/placeholder.jpg",
+      "created_at": "2023-01-06T10:00:00Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 7,
+    "fields": {
+      "title": "War and Peace",
+      "author": 7,
+      "categories": [7, 8],
+      "description": "An epic historical novel set during Napoleon’s invasion of Russia.",
+      "price": "14.99",
+      "published_date": "1869-01-01",
+      "cover_image": "book_covers/placeholder.jpg",
+      "created_at": "2023-01-07T10:00:00Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 8,
+    "fields": {
+      "title": "The Old Man and the Sea",
+      "author": 8,
+      "categories": [1],
+      "description": "The story of an old fisherman’s struggle with a giant marlin.",
+      "price": "6.99",
+      "published_date": "1952-09-01",
+      "cover_image": "book_covers/placeholder.jpg",
+      "created_at": "2023-01-08T10:00:00Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 9,
+    "fields": {
+      "title": "Harry Potter and the Sorcerer’s Stone",
+      "author": 9,
+      "categories": [4],
+      "description": "The first book in the Harry Potter fantasy series.",
+      "price": "15.99",
+      "published_date": "1997-06-26",
+      "cover_image": "book_covers/placeholder.jpg",
+      "created_at": "2023-01-09T10:00:00Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 10,
+    "fields": {
+      "title": "Murder on the Orient Express",
+      "author": 10,
+      "categories": [9],
+      "description": "A classic detective mystery featuring Hercule Poirot.",
+      "price": "9.50",
+      "published_date": "1934-01-01",
+      "cover_image": "book_covers/placeholder.jpg",
+      "created_at": "2023-01-10T10:00:00Z"
+    }
+  }
+]

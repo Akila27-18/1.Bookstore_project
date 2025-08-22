@@ -1,0 +1,51 @@
+{% extends 'books/base.html' %}
+{% block title %}About Us · Online Bookstore{% endblock %}
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow-sm border-0">
+        <div class="card-body p-4 p-md-5">
+          <h2 class="card-title mb-4 text-center">About Our Bookstore</h2>
+          <p class="lead text-muted text-center">
+            A world of stories, knowledge, and imagination — all in one place.
+          </p>
+          <hr class="my-4">
+
+          <p>
+            Welcome to <strong>Online Bookstore</strong>, your one-stop destination for discovering
+            books across genres, authors, and categories. We believe that reading is more than a
+            hobby — it is a journey that inspires, educates, and transforms lives.
+          </p>
+
+          <p>
+            From timeless classics to the latest bestsellers, our carefully curated collection brings
+            you closer to the stories and knowledge that matter. We aim to connect readers with the
+            right books, while supporting authors and fostering a vibrant reading community.
+          </p>
+
+          <h5 class="mt-4">What We Offer</h5>
+          <ul class="list-unstyled ms-3">
+            <li>📚 A diverse collection of books across genres</li>
+            <li>⭐ Honest reviews and ratings from fellow readers</li>
+            <li>💬 A space to share your thoughts and connect with others</li>
+            <li>🚚 Easy browsing, seamless checkout, and timely delivery (for physical store model)</li>
+          </ul>
+
+          <h5 class="mt-4">Our Mission</h5>
+          <p>
+            To make books accessible to everyone, everywhere, while nurturing a culture of learning,
+            creativity, and curiosity. We want every reader to find their next favorite book here.
+          </p>
+
+          <div class="text-center mt-5">
+            <a href="{% url 'book-list' %}" class="btn btn-primary btn-lg rounded-pill px-4">
+              Start Exploring
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

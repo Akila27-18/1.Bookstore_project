@@ -1,0 +1,43 @@
+{% extends 'books/base.html' %}
+{% block title %}Review · Online Bookstore{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h4 class="card-title mb-3">
+          {% if object %}Edit Review{% else %}Write Review{% endif %}
+        </h4>
+
+        <form method="post">
+          {% csrf_token %}
+          {{ form.non_field_errors }}
+
+          <div class="mb-3">
+            <label class="form-label">Rating</label>
+            {{ form.rating }}
+            {{ form.rating.errors }}
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Comment</label>
+            {{ form.comment }}
+            {{ form.comment.errors }}
+          </div>
+
+          <div class="d-flex gap-2">
+            <button class="btn btn-primary">Save</button>
+            {% if object %}
+              <a href="{{ object.book.get_absolute_url }}" class="btn btn-outline-secondary">Cancel</a>
+            {% else %}
+              <a href="{{ book.get_absolute_url }}" class="btn btn-outline-secondary">Cancel</a>
+            {% endif %}
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
