@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY', 'dev-secret-key-change-in-prod')
 DEBUG = os.getenv('DEBUG', 'True').lower() == 'true'
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split()  # e.g. "127.0.0.1 localhost"
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'one-bookstore-project.onrender.com').split()  # e.g. "127.0.0.1 localhost"
 
 INSTALLED_APPS = [
     'django.contrib.admin',
